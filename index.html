@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$FDX — Fuel eXchange</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background: #0a0a0a; color: #fff; overflow-x: hidden; }
+        .floating-icons { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .floating-icons span { position: absolute; display: block; font-size: 3rem; animation: float 15s linear infinite; opacity: 0.1; }
+        @keyframes float { 0% { transform: translateY(100vh) rotate(0deg); } 100% { transform: translateY(-10vh) rotate(720deg); } }
+        .floating-icons span:nth-child(1) { left: 10%; animation-duration: 18s; }
+        .floating-icons span:nth-child(2) { left: 30%; animation-duration: 22s; font-size: 5rem; }
+        .floating-icons span:nth-child(3) { left: 55%; animation-duration: 14s; }
+        .floating-icons span:nth-child(4) { left: 75%; animation-duration: 20s; font-size: 6rem; }
+        .floating-icons span:nth-child(5) { left: 90%; animation-duration: 16s; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 1; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid #222; margin-bottom: 40px; flex-wrap: wrap; gap: 15px; }
+        .logo { font-size: 2rem; font-weight: 800; color: #00ff88; letter-spacing: -1px; }
+        .nav-links { display: flex; gap: 25px; flex-wrap: wrap; }
+        .nav-links a { color: #aaa; text-decoration: none; font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: #00ff88; }
+        .nav-links a.active { color: #fff; border-bottom: 2px solid #00ff88; padding-bottom: 5px; }
+        .coming-soon { background: #003322; padding: 20px; border-radius: 15px; text-align: center; margin-bottom: 30px; border: 2px dashed #00ff88; }
+        .coming-soon h2 { color: #00ff88; font-size: 2.5rem; }
+        .coming-soon p { color: #88ddbb; font-size: 1.2rem; }
+        .header { display: flex; justify-content: space-between; align-items: center; padding: 30px 0; flex-wrap: wrap; gap: 30px; }
+        .header-left h1 { font-size: 4rem; background: linear-gradient(135deg, #00ff88, #00cc66); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 10px; }
+        .header-left p { font-size: 1.2rem; color: #aaa; max-width: 500px; }
+        .price-card { background: #1a1a1a; padding: 30px; border-radius: 20px; border: 1px solid #333; min-width: 280px; }
+        .price-card .label { color: #888; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+        .price-card .value { font-size: 2.5rem; font-weight: bold; color: #00ff88; }
+        .price-card .change { color: #00cc66; font-size: 1rem; }
+        .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin: 40px 0; }
+        .stat-card { background: #1a1a1a; padding: 20px; border-radius: 15px; border: 1px solid #222; text-align: center; }
+        .stat-card .label { color: #888; font-size: 0.8rem; text-transform: uppercase; }
+        .stat-card .value { font-size: 1.5rem; font-weight: bold; color: #fff; margin-top: 5px; }
+        .btn { display: inline-block; padding: 15px 35px; background: #00ff88; color: #000; font-weight: bold; border-radius: 50px; text-decoration: none; transition: 0.3s; border: none; cursor: pointer; font-size: 1rem; }
+        .btn:hover { transform: scale(1.05); background: #00cc66; }
+        .btn-outline { background: transparent; border: 2px solid #00ff88; color: #00ff88; }
+        .btn-outline:hover { background: #00ff88; color: #000; }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin: 60px 0; }
+        .feature { background: #1a1a1a; padding: 30px; border-radius: 20px; border: 1px solid #222; text-align: center; transition: 0.3s; }
+        .feature:hover { border-color: #00ff88; transform: translateY(-10px); }
+        .feature .icon { font-size: 3rem; margin-bottom: 15px; }
+        .feature h3 { color: #00ff88; margin-bottom: 10px; }
+        .feature p { color: #aaa; line-height: 1.6; }
+        .footer { text-align: center; padding: 40px 0; border-top: 1px solid #222; margin-top: 40px; color: #555; }
+        .footer a { color: #888; text-decoration: none; margin: 0 10px; }
+        .footer a:hover { color: #00ff88; }
+        @media (max-width: 768px) { .header { flex-direction: column; align-items: start; } .header-left h1 { font-size: 2.5rem; } .nav-links { gap: 15px; } }
+    </style>
+</head>
+<body>
+    <div class="floating-icons">
+        <span>⛽</span>
+        <span>🚚</span>
+        <span>🔗</span>
+        <span>⭐</span>
+        <span>💎</span>
+    </div>
+    <div class="container">
+        <nav>
+            <div class="logo">$FDX</div>
+            <div class="nav-links">
+                <a href="index.html" class="active">Главная</a>
+                <a href="finance.html">Финансы</a>
+                <a href="app.html">Приложение</a>
+            </div>
+        </nav>
+
+        <div class="coming-soon">
+            <h2>⏳ ЗАПУСК В 2030 ГОДУ</h2>
+            <p>Токен создан и зарезервирован для второго этапа экосистемы.</p>
+        </div>
+
+        <div class="header">
+            <div class="header-left">
+                <h1>Fuel eXchange</h1>
+                <p>Будущий токен для топливных пулов, B2B-логистики, корпоративных флотов и карбоновых кредитов.</p>
+                <div style="margin-top: 20px; display: flex; gap: 15px; flex-wrap: wrap;">
+                    <a href="app.html" class="btn">🚀 Узнать больше</a>
+                    <a href="finance.html" class="btn btn-outline">📊 Данные</a>
+                </div>
+            </div>
+            <div class="price-card">
+                <div class="label">Цена (резерв)</div>
+                <div class="value">$0.00005</div>
+                <div class="change">◼ Ожидает запуска</div>
+                <div style="margin-top: 15px; color: #888; font-size: 0.9rem;">
+                    <div>Supply: <strong style="color:#fff;">10,000,000,000,000,000</strong></div>
+                    <div>Капа: <strong style="color:#fff;">$500 млрд</strong></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="price-grid">
+            <div class="stat-card"><div class="label">Статус</div><div class="value" style="color: #00ff88;">Зарезервирован</div></div>
+            <div class="stat-card"><div class="label">Планируемый запуск</div><div class="value" style="color: #ffcc00;">2030</div></div>
+            <div class="stat-card"><div class="label">Supply</div><div class="value">10,000,000,000,000,000</div></div>
+            <div class="stat-card"><div class="label">Капа (FDV)</div><div class="value">$500 млрд</div></div>
+        </div>
+
+        <div class="features">
+            <div class="feature"><div class="icon">⛽</div><h3>Топливные пулы</h3><p>Скидки на заправку для водителей такси и курьеров.</p></div>
+            <div class="feature"><div class="icon">📦</div><h3>B2B-логистика</h3><p>Корпоративные перевозки и управление цепочками поставок.</p></div>
+            <div class="feature"><div class="icon">🌿</div><h3>Карбоновые кредиты</h3><p>Зелёный токен для экологических проектов и компенсации углеродного следа.</p></div>
+            <div class="feature"><div class="icon">🏢</div><h3>Корпоративные флоты</h3><p>Управление автопарками компаний и интеграция с бизнес-процессами.</p></div>
+        </div>
+
+        <div class="footer">
+            <a href="https://goldtaxi.github.io/taxi/">$TAXI</a>
+            <a href="https://goldtaxi.github.io/uber/">$UBER</a>
+            <a href="https://goldtaxi.github.io/dhl/">$DHL</a>
+            <a href="https://goldtaxi.github.io/tip/">$TIP</a>
+            <a href="https://goldtaxi.github.io/didi/">$DIDI</a>
+            <a href="https://goldtaxi.github.io/grab/">$GRAB</a>
+            <br><br>© 2026 TAXI Ecosystem. Все права защищены.
+        </div>
+    </div>
+</body>
+</html>
