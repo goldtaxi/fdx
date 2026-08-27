@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$FDX — Финансы и планы</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background: #0a0a0a; color: #fff; }
+        .floating-icons { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .floating-icons span { position: absolute; display: block; font-size: 3rem; animation: float 20s linear infinite; opacity: 0.08; }
+        @keyframes float { 0% { transform: translateY(100vh) rotate(0deg); } 100% { transform: translateY(-10vh) rotate(720deg); } }
+        .floating-icons span:nth-child(1) { left: 5%; animation-duration: 18s; }
+        .floating-icons span:nth-child(2) { left: 25%; animation-duration: 22s; font-size: 5rem; }
+        .floating-icons span:nth-child(3) { left: 50%; animation-duration: 14s; }
+        .floating-icons span:nth-child(4) { left: 70%; animation-duration: 20s; font-size: 6rem; }
+        .floating-icons span:nth-child(5) { left: 90%; animation-duration: 16s; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 1; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid #222; margin-bottom: 40px; flex-wrap: wrap; gap: 15px; }
+        .logo { font-size: 2rem; font-weight: 800; color: #00ff88; }
+        .nav-links { display: flex; gap: 25px; flex-wrap: wrap; }
+        .nav-links a { color: #aaa; text-decoration: none; font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: #00ff88; }
+        .nav-links a.active { color: #fff; border-bottom: 2px solid #00ff88; padding-bottom: 5px; }
+        h1 { font-size: 2.5rem; color: #00ff88; margin-bottom: 10px; }
+        .subtitle { color: #aaa; font-size: 1.1rem; margin-bottom: 30px; }
+        .trade-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin: 30px 0; }
+        .trade-card { background: #1a1a1a; padding: 30px; border-radius: 20px; border: 1px solid #333; }
+        .trade-card h3 { color: #00ff88; margin-bottom: 15px; }
+        .trade-card .price-big { font-size: 3rem; font-weight: bold; color: #fff; }
+        .trade-card .info { color: #888; margin: 10px 0; line-height: 1.8; }
+        .btn { display: inline-block; padding: 12px 30px; background: #00ff88; color: #000; font-weight: bold; border-radius: 50px; text-decoration: none; transition: 0.3s; border: none; cursor: pointer; }
+        .btn:hover { transform: scale(1.05); background: #00cc66; }
+        .btn-outline { background: transparent; border: 2px solid #00ff88; color: #00ff88; }
+        .btn-outline:hover { background: #00ff88; color: #000; }
+        .market-depth { background: #1a1a1a; padding: 30px; border-radius: 20px; border: 1px solid #333; margin: 30px 0; }
+        .market-depth h3 { color: #00ff88; margin-bottom: 20px; }
+        .depth-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #222; }
+        .depth-row .price { color: #00cc66; }
+        .footer { text-align: center; padding: 40px 0; border-top: 1px solid #222; margin-top: 40px; color: #555; }
+        .footer a { color: #888; text-decoration: none; margin: 0 10px; }
+        .footer a:hover { color: #00ff88; }
+        @media (max-width: 768px) { .trade-grid { grid-template-columns: 1fr; } .nav-links { gap: 15px; } }
+    </style>
+</head>
+<body>
+    <div class="floating-icons">
+        <span>📈</span>
+        <span>💹</span>
+        <span>💰</span>
+        <span>🔗</span>
+        <span>⭐</span>
+    </div>
+    <div class="container">
+        <nav>
+            <div class="logo">$FDX</div>
+            <div class="nav-links">
+                <a href="index.html">Главная</a>
+                <a href="finance.html" class="active">Финансы</a>
+                <a href="app.html">Приложение</a>
+            </div>
+        </nav>
+
+        <h1>📊 Финансы и планы</h1>
+        <p class="subtitle">$FDX — зарезервирован для второго этапа экосистемы (2030).</p>
+
+        <div class="trade-grid">
+            <div class="trade-card">
+                <h3>💰 Параметры токена</h3>
+                <div class="info">
+                    <p><strong>Цена (резерв):</strong> $0.00005</p>
+                    <p><strong>Supply:</strong> 10,000,000,000,000,000</p>
+                    <p><strong>Капа (FDV):</strong> $500 млрд</p>
+                    <p><strong>Статус:</strong> <span style="color: #00ff88;">Зарезервирован</span></p>
+                    <p><strong>Планируемый запуск:</strong> 2030</p>
+                </div>
+            </div>
+            <div class="trade-card">
+                <h3>📌 Роли и направления</h3>
+                <div class="info">
+                    <p><strong>⛽ Топливные пулы:</strong> Скидки для водителей</p>
+                    <p><strong>📦 B2B-логистика:</strong> Корпоративные перевозки</p>
+                    <p><strong>🌿 Карбоновые кредиты:</strong> Зелёные проекты</p>
+                    <p><strong>🏢 Корпоративные флоты:</strong> Управление автопарками</p>
+                </div>
+                <div style="margin-top: 20px;">
+                    <a href="app.html" class="btn btn-outline">📱 Дорожная карта</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <a href="https://goldtaxi.github.io/taxi/">$TAXI</a>
+            <a href="https://goldtaxi.github.io/uber/">$UBER</a>
+            <a href="https://goldtaxi.github.io/dhl/">$DHL</a>
+            <a href="https://goldtaxi.github.io/tip/">$TIP</a>
+            <a href="https://goldtaxi.github.io/didi/">$DIDI</a>
+            <a href="https://goldtaxi.github.io/grab/">$GRAB</a>
+            <br><br>© 2026 TAXI Ecosystem. Все права защищены.
+        </div>
+    </div>
+</body>
+</html>
