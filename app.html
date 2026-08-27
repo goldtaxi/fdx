@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$FDX — Дорожная карта</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background: #0a0a0a; color: #fff; }
+        .floating-icons { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; overflow: hidden; }
+        .floating-icons span { position: absolute; display: block; font-size: 3rem; animation: float 20s linear infinite; opacity: 0.08; }
+        @keyframes float { 0% { transform: translateY(100vh) rotate(0deg); } 100% { transform: translateY(-10vh) rotate(720deg); } }
+        .floating-icons span:nth-child(1) { left: 10%; animation-duration: 18s; }
+        .floating-icons span:nth-child(2) { left: 30%; animation-duration: 22s; font-size: 5rem; }
+        .floating-icons span:nth-child(3) { left: 60%; animation-duration: 14s; }
+        .floating-icons span:nth-child(4) { left: 80%; animation-duration: 20s; font-size: 6rem; }
+        .floating-icons span:nth-child(5) { left: 95%; animation-duration: 16s; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; position: relative; z-index: 1; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid #222; margin-bottom: 40px; flex-wrap: wrap; gap: 15px; }
+        .logo { font-size: 2rem; font-weight: 800; color: #00ff88; }
+        .nav-links { display: flex; gap: 25px; flex-wrap: wrap; }
+        .nav-links a { color: #aaa; text-decoration: none; font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: #00ff88; }
+        .nav-links a.active { color: #fff; border-bottom: 2px solid #00ff88; padding-bottom: 5px; }
+        h1 { font-size: 2.5rem; color: #00ff88; margin-bottom: 10px; }
+        .subtitle { color: #aaa; font-size: 1.1rem; margin-bottom: 30px; }
+        .roadmap { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin: 30px 0; }
+        .phase { background: #1a1a1a; padding: 30px; border-radius: 20px; border: 1px solid #333; text-align: center; }
+        .phase .year { font-size: 2rem; font-weight: bold; color: #00ff88; }
+        .phase .title { font-size: 1.2rem; color: #fff; margin: 10px 0; }
+        .phase .desc { color: #aaa; line-height: 1.6; }
+        .btn { display: inline-block; padding: 12px 30px; background: #00ff88; color: #000; font-weight: bold; border-radius: 50px; text-decoration: none; transition: 0.3s; border: none; cursor: pointer; }
+        .btn:hover { transform: scale(1.05); background: #00cc66; }
+        .footer { text-align: center; padding: 40px 0; border-top: 1px solid #222; margin-top: 40px; color: #555; }
+        .footer a { color: #888; text-decoration: none; margin: 0 10px; }
+        .footer a:hover { color: #00ff88; }
+        @media (max-width: 768px) { .roadmap { grid-template-columns: 1fr; } .nav-links { gap: 15px; } }
+    </style>
+</head>
+<body>
+    <div class="floating-icons">
+        <span>📅</span>
+        <span>🚀</span>
+        <span>🔗</span>
+        <span>⭐</span>
+        <span>💎</span>
+    </div>
+    <div class="container">
+        <nav>
+            <div class="logo">$FDX</div>
+            <div class="nav-links">
+                <a href="index.html">Главная</a>
+                <a href="finance.html">Финансы</a>
+                <a href="app.html" class="active">Приложение</a>
+            </div>
+        </nav>
+
+        <h1>📅 Дорожная карта</h1>
+        <p class="subtitle">План развития $FDX до запуска в 2030 году.</p>
+
+        <div class="roadmap">
+            <div class="phase">
+                <div class="year">2026</div>
+                <div class="title">🔹 Создание и резервирование</div>
+                <div class="desc">Токен создан и зарезервирован. Экосистема TAXI запущена с 6 активными токенами.</div>
+            </div>
+            <div class="phase">
+                <div class="year">2027-2029</div>
+                <div class="title">🔹 Масштабирование</div>
+                <div class="desc">Рост экосистемы, партнёрства с таксопарками и логистическими компаниями. Накопление данных и пользователей.</div>
+            </div>
+            <div class="phase">
+                <div class="year">2030</div>
+                <div class="title">🚀 ЗАПУСК $FDX</div>
+                <div class="desc">Активация токена для топливных пулов, B2B-логистики, корпоративных флотов и карбоновых кредитов.</div>
+            </div>
+        </div>
+
+        <div style="background: #1a1a1a; padding: 30px; border-radius: 20px; border: 1px solid #333; text-align: center; margin: 30px 0;">
+            <h3 style="color: #00ff88;">💎 $FDX — будущее экосистемы</h3>
+            <p style="color: #aaa; max-width: 600px; margin: 15px auto;">Токен создан для обеспечения долгосрочного развития после достижения экосистемой критической массы пользователей.</p>
+            <a href="index.html" class="btn">🔙 Вернуться на главную</a>
+        </div>
+
+        <div class="footer">
+            <a href="https://goldtaxi.github.io/taxi/">$TAXI</a>
+            <a href="https://goldtaxi.github.io/uber/">$UBER</a>
+            <a href="https://goldtaxi.github.io/dhl/">$DHL</a>
+            <a href="https://goldtaxi.github.io/tip/">$TIP</a>
+            <a href="https://goldtaxi.github.io/didi/">$DIDI</a>
+            <a href="https://goldtaxi.github.io/grab/">$GRAB</a>
+            <br><br>© 2026 TAXI Ecosystem. Все права защищены.
+        </div>
+    </div>
+</body>
+</html>
